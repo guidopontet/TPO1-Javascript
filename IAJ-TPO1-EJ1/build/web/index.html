@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> TPO1-EJ1 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body> 
+        <script type="text/javascript">
+           //Declaramos las dos variables a utilizar
+           var numero1; 
+           var numero2;
+           
+        document.onkeypress=presionTecla; //El evento onkeypress se genera cuando se mantiene pulsada una tecla,
+        //por lo que al ocurrir eso, se va a ejecutar la funcion presionTecla().
+        
+        function presionTecla(){
+           
+           numero1=Math.floor(Math.random()*10)+""; //Variable que mantiene el numero aleatorio generado
+           numero2=String.fromCharCode(event.keyCode); //Variable que mantiene el numero ingresado por el usuario
+           
+           alert("JUGADOR 1 ingreso: "+numero1+ "\nJUGADOR 2 ingreso: "+numero2); //mostramos lo numeros que intervienen
+           
+           if(numero1===numero2){ //sentencia condicional para determinar si son o no iguales.
+               alert("JUGADOR 2 GANA!");
+           }
+           else{
+               alert("JUGADOR 2 PIERDE!");
+           }      
+        }
+       
+  
+        </script>
+        
+        <center>
+        <h1> 
+            <font color="blue" size=40>JUEGO Numero 1 "COINCIDENCIA"</font>
+        </h1>
+        
+         </center>
+    <br>
+    <br>
+    
+         <P ALIGN=left>
+             <font color="green" size=20> INGRESE NUMERO PRESIONADO TECLA... </font>
+         </P> 
+         
+         
+         <IMG SRC="tecla.gif">
+
+    </body>
+
+</html>

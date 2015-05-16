@@ -1,0 +1,84 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> TPO1-EJ2 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            document.onmousedown=eventoMouse;
+            
+            function eventoMouse(){
+                /*El elemento Canvas es un entorno para crear imágenes de forma dinámica. 
+                Para crear una sección o elemento de cambas basta con crear su etiqueta y definir una dimensión. */
+                
+                    var canvas = document.getElementById("canvas");
+                    
+                    /*El API 2D del canvas es un objeto que nos permite dibujar y manipular imágenes y gráficos dentro de un elemento canvas. 
+                    Para referenciar el contexto del canvas, tenemos que hacer una llamada a getContext, que es un método del elemento canvas. 
+                    Tiene un parámetro, que actualmente es 2d */
+        
+                    var context=canvas.getContext("2d");
+                    
+                    var x=event.clientX;
+                    var y=event.clientY;
+                    
+                if(event.button===2){
+                    //alert("Se pulsó click derecho en posicion x="+event.clientX+" y="+event.clientY);
+                    
+                    context.fillStyle="red";
+                    context.fillRect (x, y, 20, 20);
+                    
+                 /*Las coordenadas "x" e "y" son relativas a la esquina superior izquierda del Canvas. 
+                 El ancho y el alto del rectángulo se establecen en los dos parámetros siguientes respectivamente: */
+                    
+                    context.fillStyle="white";
+                    context.font = '18px "Tahoma"';
+                    context.fillText("R", x, y+15);
+                    
+                }
+                
+                if(event.button===0){
+                    //alert("Se pulsó click izquierdo");
+                    
+                    context.fillStyle="blue";
+                    context.fillRect (x, y, 20, 20);
+                    
+                 /*Las coordenadas "x" e "y" son relativas a la esquina superior izquierda del Canvas. 
+                 El ancho y el alto del rectángulo se establecen en los dos parámetros siguientes respectivamente: */
+                    
+                    context.fillStyle="white";
+                    context.font = '18px "Tahoma"';
+                    context.fillText("L", x, y+15);
+                    
+                }
+                
+                if(event.button===1){
+                    //alert("Se pulsó boton del medio");
+                    context.fillStyle="green";
+                    context.fillRect (x, y, 20, 20);
+                    
+                 /*Las coordenadas "x" e "y" son relativas a la esquina superior izquierda del Canvas. 
+                 El ancho y el alto del rectángulo se establecen en los dos parámetros siguientes respectivamente: */
+                    
+                    context.fillStyle="white";
+                    context.font = '18px "Tahoma"';
+                    context.fillText("C", x, y+15);
+                } 
+                
+            }
+            
+        </script>
+        
+        <canvas id="canvas" width="1366" height="768" >
+      
+        
+        
+        <div> </div>
+    </body>
+</html>
